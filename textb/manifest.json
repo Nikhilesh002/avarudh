@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Obscenity Filter",
+  "version": "1.0",
+  "description": "A Chrome extension to filter obscene texts.",
+  "permissions": ["activeTab", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentscript.js"]
+    }
+  ]
+}
